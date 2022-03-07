@@ -1,0 +1,20 @@
+[Unit]
+Description=Node cloud api service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/home/pi/pi-io/venv/bin/python3 /home/pi/pi-io/run.py
+WorkingDirectory=/home/pi/denso
+SyslogIdentifier=cloud-api-service
+Restart=always
+RestartSec=10
+Environment="PYTHONUNBUFFERED=1"
+Environment="BASE_DIR=/home/pi/pi-io"
+Environment="BASE_ACTUAL=/home/pi"
+Environment="FLASK_CONFIG=production"
+
+
+[Install]
+WantedBy=multi-user.target 

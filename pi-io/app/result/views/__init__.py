@@ -1,0 +1,2 @@
+from .or_result import ReportOrListEndPoint, ReportOrEndPoint
+from .or_result_analysis import ReportOrAnalysisEndPoint, ReportOrAnalysisListEndPoint

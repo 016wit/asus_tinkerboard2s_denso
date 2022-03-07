@@ -1,0 +1,21 @@
+[Unit]
+Description=Node gpio service
+After=webservice.service 
+
+[Service]
+Type=simple
+User=root
+ExecStart=/home/pi/pi-io/venv/bin/python3 /home/pi/pi-io/engine.py
+SyslogIdentifier=gpio-service
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+Environment="BASE_DIR=/home/pi/pi-io"
+Environment="BASE_ACTUAL=/home/pi"
+Environment="CLOUD_ACTIVE=FALSE"
+Environment="DYN_RUN=FLASE"
+Environment="SERIAL=AK204110107000099"
+
+
+[Install]
+WantedBy=multi-user.target 
